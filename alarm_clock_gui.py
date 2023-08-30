@@ -18,14 +18,14 @@ def alarm(set_alarm_timer):                                   # function named a
             print("WAKE UP!")
             mixer.init()
 # play sound using winsound module
-            mixer.music.load()
+            mixer.music.load(r'C:/Users/funmi/GitRepositories/Alarm-clock-with-GUI/iPhoneAlarm.mp3')
             mixer.music.play()
             break
 # Set Alarm 
 def actual_time():
     set_alarm_timer = f"{hour.get()}:{min.get()}:{sec.get()}" # User's value for setting the alarm in the string format
     alarm(set_alarm_timer)
-    
+
 # to create GUI Object
 clock = Tk()                       # To Initialize tkinter
 
