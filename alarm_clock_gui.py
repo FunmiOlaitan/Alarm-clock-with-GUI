@@ -4,6 +4,23 @@ import time
 import datetime
 from pygame import mixer
 
+def alarm(set_alarm_timer):                                   # function named alarm(), which performs alarm clock work.                 
+    while True:                                               # Infinite Loop
+# Wait for one second using time module
+        time.sleep(1)                                         # Wait for one second using time module
+        current_time = datetime.datetime.now()                # Get current time using datetime module
+        timeNow = current_time.strftime("%H:%M:%S")           # convert the current time in strings
+        dateNow = current_time.strftime("%d/%m/%Y")           # #convert the current date in strings
+        print("The Set Date is:",dateNow)
+        print(timeNow)
+# Check whether set alarm timer is equal to current time or not
+        if timeNow == set_alarm_timer:                            
+            print("WAKE UP!")
+            mixer.init()
+# play sound using winsound module
+            mixer.music.load()
+            mixer.music.play()
+            break
 
 # to create GUI Object
 clock = Tk()                       # To Initialize tkinter
