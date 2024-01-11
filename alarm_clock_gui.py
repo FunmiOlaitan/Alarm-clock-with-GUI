@@ -20,7 +20,7 @@ def alarm(set_alarm_timer):                                   # function named a
 # play sound using winsound module
             mixer.music.load(r'C:/Users/funmi/GitRepositories/Alarm-clock-with-GUI/iPhoneAlarm.mp3')
             mixer.music.play()
-            break
+            return
 # Set Alarm 
 def actual_time():
     set_alarm_timer = f"{hour.get()}:{min.get()}:{sec.get()}" # User's value for setting the alarm in the string format
@@ -49,7 +49,7 @@ minTime= Entry(clock,textvariable = min,bg = "pink",width = 15).place(x=150,y=30
 secTime = Entry(clock,textvariable = sec,bg = "pink",width = 15).place(x=200,y=30)
 
 #To take the time input by user:
-submit = Button(clock,text = "Set Alarm",fg="red",width = 10).place(x =110,y=70)
+submit = Button(clock, text="Set Alarm", fg="red", width = 10, command=actual_time).place(x=110,y=70)
 
 clock.mainloop()
 #Execution of the window.
